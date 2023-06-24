@@ -1,29 +1,28 @@
 import { useEffect, useRef } from "react";
+import Terminal from "./Terminal";
+import Whatwedo from "./Whatwedo";
 
-const Signup = () => {
+const Hero = () => {
   const ref = useRef(null);
 
   useEffect(() => {
     const canvas = ref.current;
-    // Initialising the canvas
     const ctx = canvas.getContext("2d");
 
-    // Setting the width and height of the canvas
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Setting up the letters
-    var letters =
+    let letters =
       "ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ";
     letters = letters.split("");
 
     // Setting up the columns
-    var fontSize = 10,
+    let fontSize = 10,
       columns = canvas.width / fontSize;
 
     // Setting up the drops
-    var drops = [];
-    for (var i = 0; i < columns; i++) {
+    let drops = [];
+    for (let i = 0; i < columns; i++) {
       drops[i] = 1;
     }
 
@@ -31,8 +30,8 @@ const Signup = () => {
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, .1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      for (var i = 0; i < drops.length; i++) {
-        var text = letters[Math.floor(Math.random() * letters.length)];
+      for (let i = 0; i < drops.length; i++) {
+        let text = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillStyle = "#0f0";
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
         drops[i]++;
@@ -46,7 +45,7 @@ const Signup = () => {
       canvas.height = height;
       columns = canvas.width / fontSize;
       drops = [];
-      for (var i = 0; i < columns; i++) {
+      for (let i = 0; i < columns; i++) {
         drops[i] = 1;
       }
     }
@@ -63,11 +62,26 @@ const Signup = () => {
   return (
     <>
       <canvas ref={ref} className=" absolute"></canvas>
-      <div className=" absolute z-30 mx-auto left-0 right-0 text-center">
-        <img src="https://j.top4top.io/p_27285zs4u0.png" className=" w-[300px] mx-auto" alt="logo" />
+      <div className=" absolute z-30 mx-auto h-[300px] left-0 right-0 text-center overflow-x-clip">
+        <img
+          src="https://j.top4top.io/p_27285zs4u0.png"
+          className=" w-[300px] mx-auto logo-image"
+          alt="logo"
+        />
+        <div>
+          <h4
+            className="hero glitch layers mt-4 text-[20px] sm:text-[30px]"
+            data-text="Thunderous Hackers Team"
+          >
+            <span>Thunderous Hackers Team</span>
+          </h4>
+        </div>
+        <div className=" w-full mt-11">
+          <Terminal />
+        </div>
       </div>
     </>
   );
 };
 
-export default Signup;
+export default Hero;
