@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-import Terminal from "./Terminal";
-import Whatwedo from "./Whatwedo";
+import TerminalCom from "./terminal/TerminalCom";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -77,7 +76,7 @@ const Hero = () => {
           </h4>
         </div>
         <div className=" w-full mt-11">
-          <Terminal />
+          <TerminalCom />
         </div>
       </div>
     </>
