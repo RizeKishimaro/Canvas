@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- This is with position absolute-->
+    <p
+      id="container-1"
+      style="
+        background: black;
+        padding: 100px;
+        width: 100px;
+        position: absolute;
+      "
+    ></p>
+    <!-- This is with display block-->
+
+    <p
+      id="container-2"
+      style="background: red; padding: 100px; width: 100px"
+    ></p>
+    <!-- This is with position absolute-->
+
+    <p
+      id="container-3"
+      style="
+        background: pink;
+        padding: 100px;
+        width: 100px;
+        display: inline-block;
+      "
+    ></p>
+
+    <button onclick="changeAbsolutePosition();">Click me</button>
+    <button onclick="changeBlockPosition();">Click me</button>
+    <button onclick="changeInlinePosition();">Click me</button>
+  </body>
+  <script>
+    //selecting elements
+    const el1 = document.querySelector("#container-1");
+    const el2 = document.querySelector("#container-2");
+    const el3 = document.querySelector("#container-3");
+
+    //changing the elements position using style
+    //this will not work if the element is display block
+    function changeBlockPosition() {
+      console.log("i'm working unless i will not work if i was display block");
+      el1.style.backgroundColor = "blue";
+      el1.style.left = "400px";
+    }
+    function changeAbsolutePosition() {
+      console.log("i'm working because i set to absolute");
+
+      el2.style.backgroundColor = "purple";
+      el2.style.left = "500px";
+    }
+    function changeInlinePosition() {
+      console.log(
+        "i'm working unless i'm still including display block i will work with margin"
+      );
+      el3.style.backgroundColor = "red";
+      el3.style.left = "200px";
+    }
+  </script>
+</html>
