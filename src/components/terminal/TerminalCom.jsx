@@ -36,11 +36,11 @@ const TerminalCom = () => {
       <div className=" bg-black h-[300px] sm:px-10 sm:h-[300px] p-3 ">
         <div className="terminal overflow-hidden">
           <div className=" ">
-            <span className=" text-red-600">Thunderous Hackers Team</span>
+            <span className=" text-red-600">Rize Kishimaro</span>
           </div>
           <div className="terminal__prompt mt-5">
             <div className="terminal__prompt__label">
-              thunderous@thunderous.io$~:
+              rize@rize.io$~:
             </div>
             <div className="terminal__prompt__input">
               <input type="text" className="" ref={terminalref} />

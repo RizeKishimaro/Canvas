@@ -63,16 +63,16 @@ const Hero = () => {
       <canvas ref={ref} className=" absolute"></canvas>
       <div className=" absolute z-30 mx-auto h-[300px] left-0 right-0 text-center overflow-x-clip">
         <img
-          src="https://j.top4top.io/p_27285zs4u0.png"
+          src="https://qph.cf2.quoracdn.net/main-qimg-22ccc864539e08ad5d597874368d290b"
           className=" w-[300px] mx-auto logo-image"
           alt="logo"
         />
         <div>
           <h4
             className="hero glitch layers mt-4 text-[20px] sm:text-[30px]"
-            data-text="Thunderous Hackers Team"
+            data-text="Rize Kishimaro"
           >
-            <span>Thunderous Hackers Team</span>
+            <span>Rize Kishimaro</span>
           </h4>
         </div>
         <div className=" w-full mt-11">
