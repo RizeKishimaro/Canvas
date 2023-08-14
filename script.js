@@ -67,7 +67,7 @@ class FlowEffect {
     const positionY = y;
     const disX = mouse.x - positionX;
     const disY = mouse.y - positionY;
-    const distance = disX * disX + disY * disY;
+    let distance = disX * disX + disY * disY;
     if(distance > 3000000) distance = 3000000
     let length = distance/10000;
     this.#ctx.beginPath();
